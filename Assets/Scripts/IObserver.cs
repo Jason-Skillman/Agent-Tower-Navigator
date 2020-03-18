@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IObserver {
 
-    public void Update();
+    void Update();
 
 }

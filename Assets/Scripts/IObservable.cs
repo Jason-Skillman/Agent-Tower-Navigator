@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface IObservable {
 
-    public void Register(IObserver observer);
-    public void Unregister(IObserver observer);
-    public void Notify();
+    void Register(IObserver observer);
+    void Unregister(IObserver observer);
+    void Notify();
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuardTower : IObservable {
+public class GuardTower : MonoBehaviour, IObservable {
 
     private List<IObserver> observers;
     
@@ -12,7 +12,9 @@ public class GuardTower : IObservable {
     }
 
     void Update() {
-        
+        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+            Notify();
+        }
     }
 
     public void Register(IObserver observer) {
@@ -24,7 +26,8 @@ public class GuardTower : IObservable {
     }
 
     public void Notify() {
-
+        foreach(IObserver observer in observers)
+            observer.Update();
     }
 
 }

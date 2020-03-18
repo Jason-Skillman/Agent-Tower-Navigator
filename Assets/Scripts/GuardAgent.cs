@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class GuardAgent : IObserver {
+public class GuardAgent : MonoBehaviour, IObserver {
 
-    void Start() {
+    private NavMeshAgent agent;
 
-    }
 
-    void Update() {
-
+    void Awake() {
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void IObserver.Update() {
-        
+        agent.SetDestination(Vector3.one);
     }
 
 }
